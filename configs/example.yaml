@@ -1,0 +1,39 @@
+training:
+  training_data_dir: './Data/subject_001/training'  # needs to be specified
+  net_ckpt_dir: './results/example/training'  # the folder to save trained avatar networks
+  net_ckpt: null  # pretrained avatar network path, "null" means training from scratch
+  start_epoch: 0
+  end_epoch: 50
+  ckpt_interval: 10
+  training_data_ids: null  # scan indices used for training, "null" means using all the scans as training dataset
+  batch_size: 4
+  num_workers: 4
+  finetune_tex: true  # if true, finetune texture template using a single scan below, and new checkpoints will be saved in folder net_ckpt/finetuned_tex
+  finetune_tex_data_idx: 2  # which scan (***.ply) is used to finetune the texture template
+testing:
+  vol_res:  # canonical volume resolution
+    - 384
+    - 384
+    - 128
+  recon_net_ckpt: './pretrained_models/recon_net'  # reconstruction network
+  net_ckpt: './pretrained_models/avatar_net/example'  # GeoTexAvatar network
+  net_ckpt_finetuned: './pretrained_models/avatar_net/example_finetune_tex'  # GeoTexAvatar network with finetuned texture template
+
+  testing_data_dir: './Data/subject_001/testing'  # needs to be specified
+  output_dir: './results/example/testing'
+
+model:
+  cano_template:
+    pos_encoding: 10
+  warping_field:
+    pos_encoding: 0
+
+  # learning rates
+  cano_template_lr: 0.001
+  warping_field_lr: 0.0001
+
+  # training loss weights
+  img_loss_weight: 1.0
+  occ_loss_weight: 0.5
+  geo_offset_reg_loss_weight: 0.05
+  tex_offset_reg_loss_weight: 0.05

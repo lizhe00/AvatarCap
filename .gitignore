@@ -153,8 +153,6 @@ fabric.properties
 # Project
 results*/
 *results/
-data/*
-*data/
 debug*/
 *debug/
 smpl_files*/
