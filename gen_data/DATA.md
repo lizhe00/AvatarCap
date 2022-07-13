@@ -1,6 +1,6 @@
 # Data Preprocessing
 
-Example data can be found in [Example Dataset](../README.md#Example Dataset). Please check it for data organization and format.
+Example dataset can be found in [README.md](../README.md). Please check it for data organization and format.
 
 ## Additional Requirement
 - [libigl](https://libigl.github.io/)

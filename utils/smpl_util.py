@@ -5,12 +5,13 @@ import torch
 import math
 
 import config
+from dataset.smpl import smpl_params
 from pytorch3d.ops import knn_points, knn_gather
 
 
 class SmplUtil:
-    def __init__(self, smpl_dir):
-        self.smpl_skinning_weights = torch.from_numpy(np.loadtxt(smpl_dir + '/weightsFile.txt').astype(np.float32)).to(config.device)
+    def __init__(self):
+        self.smpl_skinning_weights = torch.from_numpy(smpl_params.weights).to(torch.float32).to(config.device)
 
         self.cano_smpl_pose = np.zeros(75, dtype = np.float32)
         self.cano_smpl_pose[3 + 3 * 1 + 2] = math.radians(25)
@@ -80,5 +81,4 @@ class SmplUtil:
         return live_normals
 
 
-PROJ_DIR = os.path.dirname(os.path.dirname(__file__))
-smpl_util = SmplUtil(PROJ_DIR + '/smpl_files/ModelTxt_%s' % config.smpl_gender)
+smpl_util = SmplUtil()
