@@ -331,6 +331,7 @@ class Renderer:
         self.bg_color = bg_color
         self.window = glfw.create_window(img_w, img_h, window_name, None, None)
         glfw.set_window_pos(self.window, 500, 500)
+        glfw.hide_window(self.window)
         glfw.make_context_current(self.window)
 
         # init shader
