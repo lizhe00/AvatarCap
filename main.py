@@ -220,7 +220,7 @@ def finetune_texture_template(nerf_renderer: NerfRenderer,
             items = to_cuda(item, add_batch = True)
 
             # forward
-            if network.warping_field.pose_feat_map is None:
+            if epoch_idx == 0 and batch_idx == 0:
                 network.warping_field.precompute_conv(items)
             nerf_output = nerf_renderer.render(items)
             occ_output = occ_net.query(items)

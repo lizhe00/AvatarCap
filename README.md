@@ -51,7 +51,7 @@ python main.py -c ./configs/example.yaml -m train
 ```
 python main.py -c ./configs/example.yaml -m test
 ```
-- Output results will be saved in ```./results/example/testing```
+- Output results will be saved in ```./results/example/testing```.
 
 ## Run on Customized Data
 Check [DATA.md](./gen_data/DATA.md) for processing your own data.

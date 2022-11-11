@@ -328,7 +328,7 @@ class AvatarCapDataset(Dataset):
 
 def to_cuda(items: dict, add_batch = False):
     """
-    Update data to GPU device.
+    Upload data to GPU device.
     :param items: CPU data dictionary from dataloader.
     :param add_batch: (bool) whether to add batch dimension at the first dimension for torch.Tensor object.
     :return: GPU data dictionary.

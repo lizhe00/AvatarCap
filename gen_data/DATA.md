@@ -5,7 +5,7 @@ Example dataset can be found in [README.md](../README.md). Please check it for d
 ## Additional Requirement
 - [libigl](https://libigl.github.io/)
 
-## Training data
+## Training Data
 1. Input: 3D scans & fitted SMPL poses.
 2. The input data is organized as the following structure:
 ```
@@ -28,7 +28,7 @@ python -m gen_data.preprocess_training_data --data_dir=training_data_dir
 6. Note that this code uses the executable of [Poisson Reconstruction](https://github.com/mkazhdan/PoissonRecon), so it can only run on Windows.
 
 
-## Testing data
+## Testing Data
 1. Input: image sequence & fitted SMPL poses.
 2. The input data is organized as the following structure.
 ```
